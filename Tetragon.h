@@ -1,16 +1,16 @@
 #pragma once
 #include "Shape.h"
 
-// Класс четырёхугольника. Наследует базовый класс Shape.
-// Хранит координаты четырех вершин.
+// РљР»Р°СЃСЃ С‡РµС‚С‹СЂС‘С…СѓРіРѕР»СЊРЅРёРєР°. РќР°СЃР»РµРґСѓРµС‚ Р±Р°Р·РѕРІС‹Р№ РєР»Р°СЃСЃ Shape.
+// РҐСЂР°РЅРёС‚ РєРѕРѕСЂРґРёРЅР°С‚С‹ С‡РµС‚С‹СЂРµС… РІРµСЂС€РёРЅ.
 class Tetragon : public Shape
 {
 private:
-	double x1, y1, x2, y2, x3, y3, x4, y4; // Координаты вершин
+	double x1, y1, x2, y2, x3, y3, x4, y4; // РљРѕРѕСЂРґРёРЅР°С‚С‹ РІРµСЂС€РёРЅ
 public:
 	Tetragon(const std::string& id, double x1, double y1,
 		double x2, double y2, double x3, double y3, double x4, double y4);
-	void move(double dx, double dy) override; // Перемещение
-	double area() const override;             // Вычисление площади
-	void show() const override;               // Вывод информации
+	void move(double dx, double dy) override; // РџРµСЂРµРјРµС‰РµРЅРёРµ
+	double area() const override;             // Р’С‹С‡РёСЃР»РµРЅРёРµ РїР»РѕС‰Р°РґРё
+	void show() const override;               // Р’С‹РІРѕРґ РёРЅС„РѕСЂРјР°С†РёРё
 };

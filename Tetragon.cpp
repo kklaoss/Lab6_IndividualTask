@@ -2,13 +2,13 @@
 #include <cmath>
 #include <iostream>
 
-// Конструктор четырёхугольника
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ С‡РµС‚С‹СЂС‘С…СѓРіРѕР»СЊРЅРёРєР°
 Tetragon::Tetragon(const std::string& id, double x1, double y1,
 	double x2, double y2, double x3, double y3, double x4, double y4)
 	: Shape(id), x1(x1), y1(y1), x2(x2), y2(y2), x3(x3), y3(y3), x4(x4), y4(y4) {
 }
 
-// Перемещение: добавляет смещение (dx, dy) ко всем вершинам
+// РџРµСЂРµРјРµС‰РµРЅРёРµ: РґРѕР±Р°РІР»СЏРµС‚ СЃРјРµС‰РµРЅРёРµ (dx, dy) РєРѕ РІСЃРµРј РІРµСЂС€РёРЅР°Рј
 void Tetragon::move(double dx, double dy)
 {
 	x1 += dx; y1 += dy;
@@ -17,7 +17,7 @@ void Tetragon::move(double dx, double dy)
 	x4 += dx; y4 += dy;
 }
 
-// Площадь четырёхугольника вычисляется как сумма площадей двух треугольников
+// РџР»РѕС‰Р°РґСЊ С‡РµС‚С‹СЂС‘С…СѓРіРѕР»СЊРЅРёРєР° РІС‹С‡РёСЃР»СЏРµС‚СЃСЏ РєР°Рє СЃСѓРјРјР° РїР»РѕС‰Р°РґРµР№ РґРІСѓС… С‚СЂРµСѓРіРѕР»СЊРЅРёРєРѕРІ
 double Tetragon::area() const
 {
 	double area1 = std::abs((x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)) / 2.0);
@@ -25,7 +25,7 @@ double Tetragon::area() const
 	return area1 + area2;
 }
 
-// Вывод информации о четырёхугольнике
+// Р’С‹РІРѕРґ РёРЅС„РѕСЂРјР°С†РёРё Рѕ С‡РµС‚С‹СЂС‘С…СѓРіРѕР»СЊРЅРёРєРµ
 void Tetragon::show() const
 {
 	std::cout << "Tetragon ID: " << id << "\n"

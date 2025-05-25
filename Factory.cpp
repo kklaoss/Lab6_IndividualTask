@@ -4,27 +4,27 @@
 #include <algorithm>
 #include <iostream>
 
-// Деструктор: удаляет все объекты из вектора
+// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ: СѓРґР°Р»СЏРµС‚ РІСЃРµ РѕР±СЉРµРєС‚С‹ РёР· РІРµРєС‚РѕСЂР°
 Factory::~Factory()
 {
 	for (auto shape : shapes) delete shape;
 }
 
-// Создание треугольника и добавление в вектор
+// РЎРѕР·РґР°РЅРёРµ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° Рё РґРѕР±Р°РІР»РµРЅРёРµ РІ РІРµРєС‚РѕСЂ
 void Factory::createTriangle(const std::string& id, double x1, double y1,
 	double x2, double y2, double x3, double y3)
 {
 	shapes.push_back(new Triangle(id, x1, y1, x2, y2, x3, y3));
 }
 
-// Создание четырёхугольника и добавление в вектор
+// РЎРѕР·РґР°РЅРёРµ С‡РµС‚С‹СЂС‘С…СѓРіРѕР»СЊРЅРёРєР° Рё РґРѕР±Р°РІР»РµРЅРёРµ РІ РІРµРєС‚РѕСЂ
 void Factory::createTetragon(const std::string& id, double x1, double y1,
 	double x2, double y2, double x3, double y3, double x4, double y4)
 {
 	shapes.push_back(new Tetragon(id, x1, y1, x2, y2, x3, y3, x4, y4));
 }
 
-// Удаление фигуры по ID. Возвращает true, если удаление успешно.
+// РЈРґР°Р»РµРЅРёРµ С„РёРіСѓСЂС‹ РїРѕ ID. Р’РѕР·РІСЂР°С‰Р°РµС‚ true, РµСЃР»Рё СѓРґР°Р»РµРЅРёРµ СѓСЃРїРµС€РЅРѕ.
 bool Factory::deleteById(const std::string& id)
 {
 	auto it = std::remove_if(shapes.begin(), shapes.end(),
@@ -38,7 +38,7 @@ bool Factory::deleteById(const std::string& id)
 	return false;
 }
 
-// Вывод информации о всех фигурах
+// Р’С‹РІРѕРґ РёРЅС„РѕСЂРјР°С†РёРё Рѕ РІСЃРµС… С„РёРіСѓСЂР°С…
 void Factory::showAll() const
 {
 	for (const auto& shape : shapes)
@@ -48,7 +48,7 @@ void Factory::showAll() const
 	}
 }
 
-// Поиск фигуры по ID. Возвращает nullptr, если не найдена.
+// РџРѕРёСЃРє С„РёРіСѓСЂС‹ РїРѕ ID. Р’РѕР·РІСЂР°С‰Р°РµС‚ nullptr, РµСЃР»Рё РЅРµ РЅР°Р№РґРµРЅР°.
 Shape* Factory::findById(const std::string& id) const
 {
 	auto it = std::find_if(shapes.begin(), shapes.end(),

@@ -5,14 +5,14 @@
 
 int main()
 {
-	Factory factory; // Создание фабрики
+	Factory factory; // РЎРѕР·РґР°РЅРёРµ С„Р°Р±СЂРёРєРё
 	int choice;
 	std::string id, id1, id2;
 	double x1, y1, x2, y2, x3, y3, x4, y4, dx, dy;
 
 	do
 	{
-		// Меню для взаимодействия с пользователем
+		// РњРµРЅСЋ РґР»СЏ РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ СЃ РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј
 		std::cout << "\nMenu:\n"
 			<< "1. Create Triangle\n"
 			<< "2. Create Tetragon\n"
@@ -26,29 +26,29 @@ int main()
 
 		switch (choice)
 		{
-		case 1: // Создание треугольника
+		case 1: // РЎРѕР·РґР°РЅРёРµ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
 			std::cout << "Enter ID: ";
 			std::cin >> id;
 			std::cout << "Enter vertices (x1 y1 x2 y2 x3 y3): ";
 			std::cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
 			factory.createTriangle(id, x1, y1, x2, y2, x3, y3);
 			break;
-		case 2: // Создание четырёхугольника
+		case 2: // РЎРѕР·РґР°РЅРёРµ С‡РµС‚С‹СЂС‘С…СѓРіРѕР»СЊРЅРёРєР°
 			std::cout << "Enter ID: ";
 			std::cin >> id;
 			std::cout << "Enter vertices (x1 y1 x2 y2 x3 y3 x4 y4): ";
 			std::cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3 >> x4 >> y4;
 			factory.createTetragon(id, x1, y1, x2, y2, x3, y3, x4, y4);
 			break;
-		case 3: // Удаление по ID
+		case 3: // РЈРґР°Р»РµРЅРёРµ РїРѕ ID
 			std::cout << "Enter ID to delete: ";
 			std::cin >> id;
 			std::cout << (factory.deleteById(id) ? "Deleted." : "ID not found.") << "\n";
 			break;
-		case 4: // Вывод всех фигур
+		case 4: // Р’С‹РІРѕРґ РІСЃРµС… С„РёРіСѓСЂ
 			factory.showAll();
 			break;
-		case 5: // Перемещение фигуры
+		case 5: // РџРµСЂРµРјРµС‰РµРЅРёРµ С„РёРіСѓСЂС‹
 			std::cout << "Enter ID and offset (dx dy): ";
 			std::cin >> id >> dx >> dy;
 			if (Shape* obj = factory.findById(id))
@@ -61,7 +61,7 @@ int main()
 				std::cout << "ID not found.\n";
 			}
 			break;
-		case 6: // Сравнение площадей
+		case 6: // РЎСЂР°РІРЅРµРЅРёРµ РїР»РѕС‰Р°РґРµР№
 			std::cout << "Enter two IDs to compare: ";
 			std::cin >> id1 >> id2;
 			if (Shape* a = factory.findById(id1))
@@ -78,10 +78,10 @@ int main()
 			}
 			else std::cout << "First ID not found.\n";
 			break;
-		case 0: // Выход
+		case 0: // Р’С‹С…РѕРґ
 			std::cout << "Exiting...\n";
 			break;
-		default: // Неверный ввод
+		default: // РќРµРІРµСЂРЅС‹Р№ РІРІРѕРґ
 			std::cout << "Invalid choice.\n";
 		}
 	} while (choice != 0);

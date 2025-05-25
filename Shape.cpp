@@ -1,20 +1,20 @@
 #include "Shape.h"
 
-// Конструктор базового класса
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР°
 Shape::Shape(const std::string& id) : id(id) {}
 
-// Возвращает идентификатор фигуры
+// Р’РѕР·РІСЂР°С‰Р°РµС‚ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ С„РёРіСѓСЂС‹
 std::string Shape::getId() const
 {
 	return id;
 }
 
-// Сравнение площадей двух фигур
+// РЎСЂР°РІРЅРµРЅРёРµ РїР»РѕС‰Р°РґРµР№ РґРІСѓС… С„РёРіСѓСЂ
 int Shape::compare(const Shape& a, const Shape& b)
 {
 	double areaA = a.area();
 	double areaB = b.area();
 	if (areaA < areaB) return -1;
 	if (areaA > areaB) return 1;
-	return 0; // Равны
+	return 0; // Р Р°РІРЅС‹
 }

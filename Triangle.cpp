@@ -2,13 +2,13 @@
 #include <cmath>
 #include <iostream>
 
-// Конструктор треугольника
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
 Triangle::Triangle(const std::string& id, double x1, double y1,
 	double x2, double y2, double x3, double y3)
 	: Shape(id), x1(x1), y1(y1), x2(x2), y2(y2), x3(x3), y3(y3){
 }
 
-// Перемещение: добавляет смещение (dx, dy) ко всем вершинам
+// РџРµСЂРµРјРµС‰РµРЅРёРµ: РґРѕР±Р°РІР»СЏРµС‚ СЃРјРµС‰РµРЅРёРµ (dx, dy) РєРѕ РІСЃРµРј РІРµСЂС€РёРЅР°Рј
 void Triangle::move(double dx, double dy)
 {
 	x1 += dx; y1 += dy;
@@ -16,13 +16,13 @@ void Triangle::move(double dx, double dy)
 	x3 += dx; y3 += dy;
 }
 
-// Площадь треугольника по формуле Гаусса
+// РџР»РѕС‰Р°РґСЊ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° РїРѕ С„РѕСЂРјСѓР»Рµ Р“Р°СѓСЃСЃР°
 double Triangle::area() const
 {
 	return std::abs((x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)) / 2.0);
 }
 
-// Вывод информации о треугольнике
+// Р’С‹РІРѕРґ РёРЅС„РѕСЂРјР°С†РёРё Рѕ С‚СЂРµСѓРіРѕР»СЊРЅРёРєРµ
 void Triangle::show() const
 {
 	std::cout << "Triangle ID: " << id << "\n"

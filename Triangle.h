@@ -1,16 +1,16 @@
 #pragma once
 #include "Shape.h"
 
-// Класс треугольника. Наследует базовый класс Shape.
-// Хранит координаты трех вершин.
+// РљР»Р°СЃСЃ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°. РќР°СЃР»РµРґСѓРµС‚ Р±Р°Р·РѕРІС‹Р№ РєР»Р°СЃСЃ Shape.
+// РҐСЂР°РЅРёС‚ РєРѕРѕСЂРґРёРЅР°С‚С‹ С‚СЂРµС… РІРµСЂС€РёРЅ.
 class Triangle : public Shape
 {
 private:
-	double x1, y1, x2, y2, x3, y3; // Координаты вершин
+	double x1, y1, x2, y2, x3, y3; // РљРѕРѕСЂРґРёРЅР°С‚С‹ РІРµСЂС€РёРЅ
 public:
 	Triangle(const std::string& id, double x1, double y1,
 		double x2, double y2, double x3, double y3);
-	void move(double dx, double dy) override; // Перемещение
-	double area() const override;             // Вычисление площади
-	void show() const override;               // Вывод информации
+	void move(double dx, double dy) override; // РџРµСЂРµРјРµС‰РµРЅРёРµ
+	double area() const override;             // Р’С‹С‡РёСЃР»РµРЅРёРµ РїР»РѕС‰Р°РґРё
+	void show() const override;               // Р’С‹РІРѕРґ РёРЅС„РѕСЂРјР°С†РёРё
 };

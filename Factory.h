@@ -2,23 +2,23 @@
 #include "Shape.h"
 #include <vector>
 
-// Класс для управления объектами: создание, удаление, хранение.
+// РљР»Р°СЃСЃ РґР»СЏ СѓРїСЂР°РІР»РµРЅРёСЏ РѕР±СЉРµРєС‚Р°РјРё: СЃРѕР·РґР°РЅРёРµ, СѓРґР°Р»РµРЅРёРµ, С…СЂР°РЅРµРЅРёРµ.
 class Factory
 {
 private:
-	std::vector<Shape*> shapes; // Вектор указателей на фигуры
+	std::vector<Shape*> shapes; // Р’РµРєС‚РѕСЂ СѓРєР°Р·Р°С‚РµР»РµР№ РЅР° С„РёРіСѓСЂС‹
 public:
-	~Factory(); // Деструктор (освобождает память)
+	~Factory(); // Р”РµСЃС‚СЂСѓРєС‚РѕСЂ (РѕСЃРІРѕР±РѕР¶РґР°РµС‚ РїР°РјСЏС‚СЊ)
 
-	// Создание треугольника
+	// РЎРѕР·РґР°РЅРёРµ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
 	void createTriangle(const std::string& id, double x1, double y1,
 		double x2, double y2, double x3, double y3);
 
-	// Создание четырёхугольника
+	// РЎРѕР·РґР°РЅРёРµ С‡РµС‚С‹СЂС‘С…СѓРіРѕР»СЊРЅРёРєР°
 	void createTetragon(const std::string& id, double x1, double y1,
 		double x2, double y2, double x3, double y3, double x4, double y4);
 
-	bool deleteById(const std::string& id); // Удаление фигуры по ID
-	void showAll() const;                   // Вывод всех фигур
-	Shape* findById(const std::string& id) const; // Поиск фигуры по ID
+	bool deleteById(const std::string& id); // РЈРґР°Р»РµРЅРёРµ С„РёРіСѓСЂС‹ РїРѕ ID
+	void showAll() const;                   // Р’С‹РІРѕРґ РІСЃРµС… С„РёРіСѓСЂ
+	Shape* findById(const std::string& id) const; // РџРѕРёСЃРє С„РёРіСѓСЂС‹ РїРѕ ID
 };
